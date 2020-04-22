@@ -1,0 +1,425 @@
+{
+	"info": {
+		"_postman_id": "582b9f26-7b98-4c05-9563-723a7b84437e",
+		"name": "Multi-Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "post",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{passport_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/user/post/?title=Hello work 2&description=Work Description 2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"post",
+										""
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "Hello work 2",
+											"description": "d"
+										},
+										{
+											"key": "description",
+											"value": "Work Description 2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{passport_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/user/post",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{passport_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/user/posts",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/user/register?email=thihakyaw.dev@gmail.com&name=Thiha Kyaw&password=thihakyaw",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"register"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "thihakyaw.dev@gmail.com"
+								},
+								{
+									"key": "name",
+									"value": "Thiha Kyaw"
+								},
+								{
+									"key": "password",
+									"value": "thihakyaw"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{passport_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/user/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{passport_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/user/login?email=thihakyaw.dev@gmail.com&password=thihakyaw",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "thihakyaw.dev@gmail.com"
+								},
+								{
+									"key": "password",
+									"value": "thihakyaw"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/admin/register?email=thihakyaw.dev@gmail.com&name=Thiha Kyaw Admin&password=thihakyaw",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"register"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "thihakyaw.dev@gmail.com"
+								},
+								{
+									"key": "name",
+									"value": "Thiha Kyaw Admin"
+								},
+								{
+									"key": "password",
+									"value": "thihakyaw"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{passport_token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/admin/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{passport_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/admin/login?email=thihakyaw.dev@gmail.com&password=thihakyaw",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "thihakyaw.dev@gmail.com"
+								},
+								{
+									"key": "password",
+									"value": "thihakyaw"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{passport_token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/admin/posts",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
